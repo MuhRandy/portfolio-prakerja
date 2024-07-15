@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Muhammad Randy's Portfolio</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- sweetalert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.12.2/dist/sweetalert2.all.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/sweetalert2@11.12.2/dist/sweetalert2.min.css"
+    />
+
+    <!-- Tabler Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css"
+    />
+
+    <!-- my CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body
+    class="font-[arial] [&_h1]:text-4xl [&_h1]:font-bold [&_h1]:text-primary-600"
+  >
+    <header class="sticky top-0 z-10">
+      <nav
+        class="bg-gradient-to-r from-secondary to-primary text-tersier p-4 text-xl flex justify-end"
+      >
+        <!-- show at below 768px -->
+        <button id="menu-button">
+          <i class="ti ti-menu-2 md:hidden text-2xl"></i>
+        </button>
+
+        <div
+          id="menu"
+          class="flex justify-end bg-black/60 ease-in-out duration-300 fixed top-0 right-0 left-0 bottom-0 h-screen w-screen invisible opacity-0"
+        >
+          <div
+            class="bg-tersier text-tersier-100 flex-none text-center w-max h-screen p-4 pt-8 menu-out ease-in-out duration-300"
+          >
+            <button class="absolute top-0 right-0 text-black">
+              <i class="ti ti-x"></i>
+            </button>
+
+            <ul class="flex flex-col gap-1 *:border-b *:border-tersier-100">
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li>
+                <a href="#experiences">Experiences</a>
+              </li>
+              <li>
+                <a href="#education">Education</a>
+              </li>
+              <li>
+                <a href="#skills">Skills</a>
+              </li>
+              <li>
+                <a href="#projects">Projects</a>
+              </li>
+              <li>
+                <a href="#interests">Interests</a>
+              </li>
+              <li><a href="#award">Award</a></li>
+            </ul>
+          </div>
+        </div>
+        <!--  -->
+
+        <ul class="hidden md:flex gap-4 hover:*:font-bold">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#experiences">Experiences</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#interests">Interests</a></li>
+          <li><a href="#award">Award</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div
+      id="contact-form"
+      class="bg-black/60 fixed z-10 top-0 right-0 left-0 bottom-0 flex justify-center items-center invisible opacity-0 ease-in-out duration-300"
+    >
+      <form
+        class="bg-tersier p-8 text-tersier-100 flex flex-col items-center gap-4 min-w-[500px] rounded-md relative"
+      >
+        <button
+          id="close-form"
+          type="button"
+          class="absolute top-2 right-2 text-3xl"
+        >
+          <i class="ti ti-x"></i>
+        </button>
+
+        <h1>Contact Me</h1>
+
+        <input
+          class="border border-tersier-100 rounded-md p-2 w-full focus:outline-none"
+          type="email"
+          id="email"
+          placeholder="Your Email..."
+          required
+        />
+
+        <textarea
+          class="border border-tersier-100 rounded-md p-2 w-full focus:outline-none"
+          id="message"
+          placeholder="Your Message..."
+          rows="8"
+          required
+        ></textarea>
+
+        <button
+          id="send-message"
+          type="button"
+          class="bg-primary text-tersier py-1 px-3 rounded"
+        >
+          Send <i class="ti ti-send"></i>
+        </button>
+      </form>
+    </div>
+
+    <main
+      class="text-tersier-200 bg-tersier *:relative *:min-h-screen *:flex [&_article]:border [&_article]:rounded-md [&_article]:p-4 [&_article]:border-tersier-100 [&_h2]:text-xl [&_h2]:font-bold [&_h2]:text-primary-600"
+    >
+      <section
+        id="home"
+        class="px-[10vw] pt-[20vh] pb-[calc(20vh+75px)] flex-col-reverse lg:flex-row items-center gap-10"
+      >
+        <div class="flex flex-col gap-6">
+          <h1><span></span></h1>
+
+          <p class="text-xl">
+            Now I live in Banjar, South Kalimantan. If you are interested in
+            working with me, you can contact me below.
+          </p>
+
+          <div
+            class="text-tersier flex justify-between [&_button]:rounded [&_button]:p-2"
+          >
+            <div class="flex gap-2">
+              <button
+                class="border border-primary bg-primary ease-in-out transition hover:bg-tersier hover:text-primary"
+              >
+                <a
+                  href="https://docs.google.com/document/export?format=pdf&id=1hIBQzHBIAcHxX6sC5b8NVqLpdS6w0uK7Ynj_wRlGvAY"
+                  >Download CV</a
+                >
+              </button>
+              <button
+                id="contact-me"
+                class="border border-primary text-primary hover:bg-primary hover:text-tersier"
+              >
+                Contact Me
+              </button>
+            </div>
+
+            <ul
+              class="hidden sm:flex gap-[1px] items-center text-3xl hover:*:scale-110"
+            >
+              <li>
+                <a href="https://twitter.com/RandyThz" target="_blank"
+                  ><i class="ti ti-brand-x text-black"></i
+                ></a>
+              </li>
+
+              <li>
+                <a
+                  href="https://www.facebook.com/profile.php?id=61554760059857"
+                  target="_blank"
+                  ><i class="ti ti-brand-facebook-filled text-[#0f8bf1]"></i
+                ></a>
+              </li>
+
+              <li>
+                <a href="#" target="_blank"
+                  ><i class="ti ti-brand-instagram text-[#fe005f]"></i
+                ></a>
+              </li>
+
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/muhammad-randy/"
+                  target="_blank"
+                  ><i class="ti ti-brand-linkedin text-[#2788be]"></i
+                ></a>
+              </li>
+
+              <li>
+                <a href="https://github.com/MuhRandy" target="_blank"
+                  ><i class="ti ti-brand-github-filled text-black"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <ul
+          class="flex sm:hidden gap-[1px] items-center text-3xl hover:*:scale-110"
+        >
+          <li>
+            <a href="https://twitter.com/RandyThz" target="_blank"
+              ><i class="ti ti-brand-x text-black"></i
+            ></a>
+          </li>
+
+          <li>
+            <a
+              href="https://www.facebook.com/profile.php?id=61554760059857"
+              target="_blank"
+              ><i class="ti ti-brand-facebook-filled text-[#0f8bf1]"></i
+            ></a>
+          </li>
+
+          <li>
+            <a href="#" target="_blank"
+              ><i class="ti ti-brand-instagram text-[#fe005f]"></i
+            ></a>
+          </li>
+
+          <li>
+            <a
+              href="https://www.linkedin.com/in/muhammad-randy/"
+              target="_blank"
+              ><i class="ti ti-brand-linkedin text-[#2788be]"></i
+            ></a>
+          </li>
+
+          <li>
+            <a href="https://github.com/MuhRandy" target="_blank"
+              ><i class="ti ti-brand-github-filled text-black"></i
+            ></a>
+          </li>
+        </ul>
+
+        <div class="w-[200px] sm:w-[300px] flex-none">
+          <img
+            src="./img/undraw_developer_activity_re_39tg.svg"
+            alt="Illustration of man work with computer"
+            class="w-full"
+          />
+        </div>
+      </section>
+
+      <section
+        id="about"
+        class="px-8 sm:px-20 lg:px-[20vw] pt-8 pb-[calc(2rem+75px)] flex-col gap-2 justify-center items-center text-justify"
+      >
+        <h1 class="text-center">About Me</h1>
+
+        <div class="flex items-center gap-4">
+          <p class="text-xl">
+            Hello! I'm Muhammad Randy, a recent Mathematics graduate from
+            Lambung Mangkurat University. Since graduating in 2022, I've been
+            immersed in self-learning web programming, driven by a deep passion
+            for web development and a commitment to mastering the craft of
+            creating dynamic and responsive websites.
+          </p>
+
+          <div
+            class="hidden w-[100px] sm:block lg:w-[120px] flex-none border overflow-clip p-1 box-border shadow-lg mr-4 rotate-2 bg-white hover:scale-110"
+          >
+            <img
+              src="./img/profil-2.jpeg"
+              alt="Muhammad Randy"
+              class="w-full border"
+            />
+          </div>
+        </div>
+
+        <div class="flex flex-col items-center gap-4">
+          <p class="text-xl">
+            Specializing in HTML, CSS, and JavaScript, I continually stay
+            abreast of industry trends, bringing a blend of technical
+            proficiency and creative flair to every project. I've applied these
+            skills to projects such as a dynamic school website with CRUD
+            functionalities and Firebase backend, where I contributed to
+            crafting engaging and functional web solutions. I'm eager to
+            leverage my expertise in web development to tackle new challenges
+            and make meaningful contributions in this exciting field.
+          </p>
+
+          <p class="text-xl">
+            Feel free to explore my portfolio and connect with me to discuss
+            potential collaborations or opportunities. I look forward to
+            bringing creativity and technical expertise to innovative projects
+            and contributing to the future of web development.
+          </p>
+        </div>
+      </section>
+
+      <section
+        id="experiences"
+        class="px-4 sm:px-10 lg:px-[10vw] pt-8 pb-[calc(2rem+75px)] flex-col gap-14"
+      >
+        <h1>Experiences</h1>
+
+        <div
+          class="flex flex-col gap-12 *:flex *:items-center *:gap-8 [&>div_div]:has-[img]:sm:w-[280px] [&>div_div]:has-[img]:flex-none [&>div>div]:hidden [&>div>div]:md:block [&_article>div]:md:hidden [&_article>div]:w-full [&_article>div]:self-center [&_article]:flex [&_article]:flex-col [&_article]:md:block"
+        >
+          <div>
+            <article>
+              <div>
+                <img
+                  src="./img/undraw_educator_re_ju47.svg"
+                  alt="Educator illustrations"
+                  class="w-full"
+                />
+              </div>
+
+              <h2>MTS MIFTAHUL ULUM - Banjar, South Kalimantan</h2>
+
+              <p class="text-base mb-3">
+                Honorary Teacher (Feb 2023 - Feb 2024)
+              </p>
+
+              <p>
+                I have experience working as a Math and Science teacher,
+                responsible for teaching both subjects to two classes. My role
+                includes developing curriculum, conducting engaging lessons,
+                assessing student progress, and fostering a positive learning
+                environment. I am dedicated to inspiring students' curiosity and
+                understanding of mathematical concepts and scientific
+                principles.
+              </p>
+            </article>
+
+            <div>
+              <img
+                src="./img/undraw_educator_re_ju47.svg"
+                alt="Educator illustrations"
+                class="w-full"
+              />
+            </div>
+          </div>
+
+          <div>
+            <div>
+              <img
+                src="./img/undraw_add_information_j2wg.svg"
+                alt="Add information illustrations"
+                class="w-full"
+              />
+            </div>
+
+            <article>
+              <div>
+                <img
+                  src="./img/undraw_add_information_j2wg.svg"
+                  alt="Add information illustrations"
+                  class="w-full"
+                />
+              </div>
+
+              <h2>MTS MIFTAHUL ULUM - Banjar, South Kalimantan</h2>
+
+              <p class="text-base mb-3">Data Entry (Jul 2023 - Feb 2024)</p>
+
+              <p>
+                I collaborate with the vice principal to accurately enter new
+                student data and school information into the Emis 4.0 website,
+                ensuring completeness by cross-referencing information from
+                multiple sources. Additionally, I assist in maintaining
+                organized and up-to-date records of student and school data.
+              </p>
+            </article>
+          </div>
+
+          <div>
+            <article>
+              <div>
+                <img
+                  src="./img/undraw_online_banking_re_kwqh.svg"
+                  alt="Online banking illustrations"
+                  class="w-full"
+                />
+              </div>
+
+              <h2>SELF EMPLOYED - Banjar, South Kalimantan</h2>
+
+              <p class="text-base mb-3">
+                Mobile Credits and Digital Transactions Provider (Apr 2023 -
+                Present)
+              </p>
+
+              <p>
+                I have extensive experience in retailing a variety of products
+                and services including internet data packages, mobile phone
+                credits (pulsa), electricity tokens, game top-ups, and virtual
+                money transactions like DANA. My responsibilities include
+                managing sales, customer relations, and ensuring seamless
+                transactions across multiple sectors within the
+                telecommunications and digital finance industries. I am
+                committed to delivering excellent service and meeting the
+                diverse needs of my customers.
+              </p>
+            </article>
+
+            <div>
+              <img
+                src="./img/undraw_online_banking_re_kwqh.svg"
+                alt="Online banking illustrations"
+                class="w-full"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="education"
+        class="px-4 sm:px-10 lg:px-[10vw] pt-[5vh] pb-[calc(5vh+75px)] flex-col justify-center items-center gap-4"
+      >
+        <h1 class="text-center">Education</h1>
+
+        <div
+          class="flex flex-col gap-12 [&>div>div]:bg-white [&>div>div]:flex-none [&>div>div]:box-border [&>div>div]:h-max [&>div>div]:border [&>div>div]:p-2 [&>div>div]:shadow-md"
+        >
+          <div class="flex gap-8 items-center">
+            <article class="border rounded-md p-4">
+              <h2>Lambung Mangkurat University (July 2018 - August 2022)</h2>
+
+              <div class="text-base mb-3">
+                Bachelor of Mathemathics - GPA 3.37
+              </div>
+
+              <p>
+                During my time at Lambung Mangkurat University, I developed a
+                strong foundation in mathematical theories and their practical
+                applications. My coursework included a wide range of subjects
+                such as discrete mathematics, linear algebra, and numerical
+                methods, which equipped me with analytical and problem-solving
+                skills. My thesis on N-Soft Sets and Its Implementation allowed
+                me to delve into advanced mathematical concepts and explore
+                their real-world applications. This rigorous academic experience
+                has honed my logical thinking and quantitative analysis
+                abilities, which are essential for a successful career in
+                programming and web development.
+              </p>
+            </article>
+
+            <div class="hidden sm:block rotate-3">
+              <img
+                src="./img/graduation-university.jpeg"
+                alt="Muhammad Randy graduation ceremony"
+                class="w-[200px] h-[200px] object-cover object-bottom"
+              />
+            </div>
+          </div>
+
+          <div class="flex items-center gap-8">
+            <div class="hidden sm:block overflow-hidden -rotate-3">
+              <img
+                src="./img/Graduation-high school.jpeg"
+                alt="Muhammad Randy and his father at high school graduation"
+                class="w-[200px] h-[200px] object-cover object-bottom"
+              />
+            </div>
+
+            <article class="border rounded-md p-4">
+              <h2>SMAN 1 Sungai Tabuk (2015 - 2018)</h2>
+
+              <div class="text-base mb-3">MIPA - Average Score: 89</div>
+
+              <p>
+                At SMAN 1 Sungai Tabuk, I pursued the MIPA (Mathematics and
+                Natural Sciences) stream, where I excelled in subjects such as
+                mathematics, physics, and chemistry. Additionally, I was an
+                active member of the Kelompok Studi Islam (KSI) extracurricular
+                group, where we focused on learning how to be good Muslims and
+                enhancing our performance in school. This period of my education
+                laid the groundwork for my analytical and quantitative skills,
+                fostering a deep interest in problem-solving and logical
+                reasoning, which I carried forward into my university studies
+                and subsequent career aspirations in web development.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="skills"
+        class="px-4 sm:px-10 lg:px-[10vw] py-[20vh] flex-col items-center gap-10 *:flex"
+      >
+        <div class="items-center gap-10">
+          <div class="flex flex-col gap-6">
+            <h1>Skills</h1>
+
+            <p class="text-xl">
+              Having pursued a self-directed learning path in web development
+              since graduating with my bachelor's degree, I've actively engaged
+              with online resources such as YouTube and platforms like
+              Freecodecamp and Dicoding. Through dedication and practical
+              application, I've successfully developed several personal projects
+              that showcase my skills and passion for web development. I am
+              excited to contribute my knowledge and expertise to real-world
+              projects and further expand my capabilities as a web developer.
+            </p>
+          </div>
+
+          <div class="hidden lg:block w-[300px] flex-none">
+            <img
+              src="./img/undraw_percentages_re_a1ao.svg"
+              alt="Illustration of skills percentages"
+              class="w-full"
+            />
+          </div>
+        </div>
+
+        <div
+          class="flex-wrap gap-4 text-black *:border *:rounded-md *:p-4 *:flex *:gap-4 *:items-center"
+        >
+          <article class="w-full flex-col md:flex-row">
+            <h2>Frontend Technologies :</h2>
+
+            <ul
+              class="flex flex-wrap justify-center gap-2 md:justify-normal *:rounded-md *:flex *:items-center *:gap-1 *:w-max *:px-2"
+            >
+              <li class="bg-[#d14c28] text-white">
+                <i class="ti ti-brand-html5"></i> HTML
+              </li>
+              <li class="bg-[#2276b3] text-white">
+                <i class="ti ti-brand-css3"></i> CSS
+              </li>
+              <li class="bg-[#eed92b]">
+                <i class="ti ti-brand-javascript"></i> JavaScript
+              </li>
+              <li class="bg-[#2e6db3] text-white">
+                <i class="ti ti-brand-typescript"></i> Typescript
+              </li>
+              <li class="bg-[#5cc8e6]">
+                <i class="ti ti-brand-react"></i> React
+              </li>
+              <li class="bg-[#08a6c1] text-white">
+                <i class="ti ti-brand-tailwind"></i> Tailwind CSS
+              </li>
+            </ul>
+          </article>
+
+          <article class="flex-col w-full lg:w-max md:flex-row">
+            <h2>Backend Technologies :</h2>
+
+            <ul
+              class="flex flex-wrap gap-2 justify-center md:justify-normal *:flex *:items-center *:gap-1 *:w-max *:rounded-md *:px-2"
+            >
+              <li class="bg-[#659f56] text-white">
+                <i class="ti ti-brand-nodejs"></i> Node.js
+              </li>
+
+              <li class="bg-black text-white">
+                <img
+                  src="https://www.vectorlogo.zone/logos/expressjs/expressjs-icon.svg"
+                  alt="express.js logo"
+                  class="w-[20px] bg-white p-[3px] my-1 box-border rounded-full"
+                />
+                Express
+              </li>
+
+              <li class="bg-[#4ea04f] text-white">
+                <i class="ti ti-brand-mongodb"></i>
+                MongoDB
+              </li>
+
+              <li class="bg-[#e8b826]">
+                <i class="ti ti-brand-firebase"></i>
+                Firebase
+              </li>
+            </ul>
+          </article>
+
+          <article class="w-full flex-col md:flex-row lg:w-max">
+            <h2>Tools & Version Control :</h2>
+
+            <ul
+              class="flex flex-wrap gap-2 text-white justify-center md:justify-normal *:flex *:items-center *:gap-1 *:w-max *:rounded-md *:px-2"
+            >
+              <li class="bg-[#e6563b]"><i class="ti ti-brand-git"></i> Git</li>
+
+              <li class="bg-black">
+                <i class="ti ti-brand-github"></i> Github
+              </li>
+
+              <li class="bg-[#c4403f]"><i class="ti ti-brand-npm"></i> npm</li>
+
+              <li class="bg-[#ee942d]">
+                <i class="ti ti-brand-pnpm"></i> pnpm
+              </li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section
+        id="projects"
+        class="px-4 lg:px-[10vw] pt-[5vh] pb-[calc(5vh+75px)] flex-col justify-center items-center gap-4 [&_ul]:text-black"
+      >
+        <h1 class="text-center">Projects</h1>
+
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 gap-4 [&_article_div]:has-[img]:w-full [&_article]:h-full hover:*:scale-105"
+        >
+          <a href="https://mts-miftahul-ulum.web.app/" target="_blank">
+            <article class="border rounded-md p-4">
+              <div class="w-full">
+                <img
+                  src="./img/projects/school-website.jpg"
+                  alt="School website preview"
+                />
+              </div>
+              <h2>MTs Miftahul Ulum Website</h2>
+
+              <p>
+                MTs Miftahul Ulum that have auth, CRUD, and filter post category
+                feature using Firebase as a Backend
+              </p>
+
+              <ul
+                class="flex flex-wrap gap-2 mt-2 *:rounded-md *:flex *:items-center *:gap-1 *:w-max *:px-2"
+              >
+                <li class="bg-[#2e6db3] text-white">
+                  <i class="ti ti-brand-typescript"></i> Typescript
+                </li>
+                <li class="bg-[#5cc8e6]">
+                  <i class="ti ti-brand-react"></i> React
+                </li>
+                <li class="bg-[#08a6c1] text-white">
+                  <i class="ti ti-brand-tailwind"></i> Tailwind CSS
+                </li>
+                <li class="bg-[#e8b826]">
+                  <i class="ti ti-brand-firebase"></i>
+                  Firebase
+                </li>
+              </ul>
+            </article>
+          </a>
+
+          <a
+            href="https://github.com/MuhRandy/quran-memorize-quiz"
+            target="_blank"
+          >
+            <article class="border rounded-md p-4">
+              <div>
+                <img
+                  src="./img/projects/quran-memorize-quiz.png"
+                  alt="Qur'an memorize quiz Preview"
+                />
+              </div>
+
+              <h2>Qur'an Memorize Quiz</h2>
+
+              <p>
+                A simple quran memorize quiz. User can select the Surah and how
+                many question will generate, when user select the answer, there
+                will indicate which answer is right and wrong, and also user
+                score at the end.
+              </p>
+
+              <ul
+                class="flex flex-wrap gap-2 mt-2 *:rounded-md *:flex *:items-center *:gap-1 *:w-max *:px-2"
+              >
+                <li class="bg-[#2e6db3] text-white">
+                  <i class="ti ti-brand-typescript"></i> Typescript
+                </li>
+                <li class="bg-[#5cc8e6]">
+                  <i class="ti ti-brand-react"></i> React
+                </li>
+                <li class="bg-[#08a6c1] text-white">
+                  <i class="ti ti-brand-tailwind"></i> Tailwind CSS
+                </li>
+              </ul>
+            </article>
+          </a>
+
+          <a
+            href="https://github.com/MuhRandy/react-markdown-preview-fcc"
+            target="_blank"
+          >
+            <article class="border rounded-md p-4">
+              <div>
+                <img
+                  src="./img/projects/react-markdown-preview.jpg"
+                  alt="Markdown Preview Website Preview"
+                />
+              </div>
+
+              <h2>Markdown Preview</h2>
+
+              <p>
+                A simple responsive markdown preview with maximize and minimize
+                button and user can choose layout between side by side or top
+                and down.
+              </p>
+
+              <ul
+                class="flex flex-wrap gap-2 mt-2 *:rounded-md *:flex *:items-center *:gap-1 *:w-max *:px-2"
+              >
+                <li class="bg-[#5cc8e6]">
+                  <i class="ti ti-brand-react"></i> React
+                </li>
+                <li class="bg-[#08a6c1] text-white">
+                  <i class="ti ti-brand-tailwind"></i> Tailwind CSS
+                </li>
+              </ul>
+            </article>
+          </a>
+
+          <a
+            href="https://github.com/MuhRandy/random-quote-machine"
+            target="_blank"
+          >
+            <article class="border rounded-md p-4">
+              <div>
+                <img
+                  src="./img/projects/random-quote-machine.jpg"
+                  alt="Random Quote Machine Preview"
+                />
+              </div>
+
+              <h2>Random Quote Machine</h2>
+
+              <p>
+                A simple responsive random quote web that using free api and
+                user can share quote to twitter with single click.
+              </p>
+
+              <ul
+                class="flex flex-wrap gap-2 mt-2 *:rounded-md *:flex *:items-center *:gap-1 *:w-max *:px-2"
+              >
+                <li class="bg-[#5cc8e6]">
+                  <i class="ti ti-brand-react"></i> React
+                </li>
+                <li class="bg-[#08a6c1] text-white">
+                  <i class="ti ti-brand-tailwind"></i> Tailwind CSS
+                </li>
+              </ul>
+            </article>
+          </a>
+
+          <a
+            href="https://github.com/MuhRandy/bookshelf-app-vanilla-js"
+            target="_blank"
+          >
+            <article class="border rounded-md p-4 w-full">
+              <div>
+                <img
+                  src="./img/projects/bookshelf-app.jpg"
+                  alt="Bookshelf App Preview"
+                />
+              </div>
+
+              <h2>Bookshelf App</h2>
+
+              <p>
+                A simple responsive bookshelf app to list what book you already
+                read or not read yet
+              </p>
+
+              <ul
+                class="flex flex-wrap gap-2 mt-2 *:rounded-md *:flex *:items-center *:gap-1 *:w-max *:px-2"
+              >
+                <li class="bg-[#d14c28] text-white">
+                  <i class="ti ti-brand-html5"></i> HTML
+                </li>
+                <li class="bg-[#2276b3] text-white">
+                  <i class="ti ti-brand-css3"></i> CSS
+                </li>
+                <li class="bg-[#eed92b]">
+                  <i class="ti ti-brand-javascript"></i> JavaScript
+                </li>
+              </ul>
+            </article>
+          </a>
+        </div>
+      </section>
+
+      <section
+        id="interests"
+        class="px-4 lg:px-[10vw] pt-8 pb-[calc(2rem+75px)] flex-col justify-center gap-8 [&_img]:w-full [&_article]:w-full [&_article]:flex [&_article]:items-center [&_article]:gap-4 [&_article]:sm:flex-col has-[img]:[&_article>div]:sm:hidden has-[img]:[&_article>div]:w-[120px] has-[img]:[&_article>div]:bg-white has-[img]:[&_article>div]:border has-[img]:[&_article>div]:p-2 has-[img]:[&_article>div]:shadow-md"
+      >
+        <h1 class="text-center">Interest</h1>
+
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 gap-4 *:flex *:gap-8 *:items-center [&>div>div]:flex-none [&>div>div]:box-border [&>div>div]:w-[120px] [&>div>div]:border [&>div>div]:p-2 [&>div>div]:shadow-md [&>div>div]:bg-white [&>div>div]:hidden [&>div>div]:sm:block"
+        >
+          <div>
+            <article class="sm:text-right">
+              <div class="rotate-3">
+                <img
+                  src="./img/undraw_home_cinema_l7yl.svg"
+                  alt="Man watching show using 3d glasses"
+                />
+              </div>
+              <div>
+                <h2>Movies and Series</h2>
+
+                <p>
+                  Enjoy watching a variety of movies and series in different
+                  genres.
+                </p>
+              </div>
+            </article>
+
+            <div class="rotate-3">
+              <img
+                src="./img/undraw_home_cinema_l7yl.svg"
+                alt="Man watching show using 3d glasses"
+              />
+            </div>
+          </div>
+
+          <div>
+            <div class="-rotate-3">
+              <img
+                src="./img/undraw_books_re_8gea.svg"
+                alt="Man watching show using 3d glasses"
+                class="w-[150px]"
+              />
+            </div>
+
+            <article class="border rounded-md p-4">
+              <div class="-rotate-3">
+                <img
+                  src="./img/undraw_books_re_8gea.svg"
+                  alt="Man watching show using 3d glasses"
+                  class="w-[150px]"
+                />
+              </div>
+
+              <div>
+                <h2>Reading</h2>
+
+                <p>
+                  Particularly interested in light novels and self-development
+                  books.
+                </p>
+              </div>
+            </article>
+          </div>
+
+          <div>
+            <article class="sm:text-right">
+              <div class="rotate-3">
+                <img
+                  src="./img/undraw_meditation_re_gll0.svg"
+                  alt="Man watching show using 3d glasses"
+                  class="w-[150px]"
+                />
+              </div>
+
+              <div>
+                <h2>Self-Development</h2>
+
+                <p>
+                  Watch YouTube videos and read articles on self-improvement and
+                  personal growth.
+                </p>
+              </div>
+            </article>
+
+            <div class="rotate-3">
+              <img
+                src="./img/undraw_meditation_re_gll0.svg"
+                alt="Man watching show using 3d glasses"
+                class="w-[150px]"
+              />
+            </div>
+          </div>
+
+          <div>
+            <div class="-rotate-3">
+              <img
+                src="./img/undraw_programming_re_kg9v.svg"
+                alt="Man watching show using 3d glasses"
+                class="w-[150px]"
+              />
+            </div>
+
+            <article>
+              <div class="-rotate-3">
+                <img
+                  src="./img/undraw_programming_re_kg9v.svg"
+                  alt="Man watching show using 3d glasses"
+                  class="w-[150px]"
+                />
+              </div>
+
+              <div>
+                <h2>Coding</h2>
+
+                <p>
+                  Fascinated by the ability to create and build applications
+                  using programming skills.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="award"
+        class="px-4 sm:px-[10vw] pt-[5vh] pb-[calc(5vh+75px)] flex-col items-center gap-10 *:flex"
+      >
+        <div class="items-center gap-10">
+          <div class="flex flex-col gap-6">
+            <h1>Award</h1>
+
+            <p class="text-xl">
+              "Seek knowledge from the cradle to the grave."
+              <span class="font-bold">– Prophet Muhammad SAW</span>
+            </p>
+          </div>
+
+          <div class="w-[200px] hidden sm:block md:w-[300px] flex-none">
+            <img
+              src="./img/undraw_awards_fieb.svg"
+              alt="Illustration of man and woman carry a trophy"
+              class="w-full"
+            />
+          </div>
+        </div>
+
+        <div class="flex-wrap gap-4">
+          <article class="border rounded-md p-4 flex gap-4 items-center w-full">
+            <ul class="flex flex-wrap gap-2 list-disc list-outside ml-2">
+              <li>
+                <span class="font-bold"
+                  >Top 1 or 2 Ranking Throughout High School:</span
+                >
+                Consistently achieved top 1 or 2 rankings during my time at SMAN
+                1 Sungai Tabuk.
+              </li>
+
+              <li>
+                <span class="font-bold"
+                  >Top 2 in LKTI Pekan Muharram Dies Natalis FMIPA ULM:</span
+                >
+                Secured the second position in the Scientific Writing
+                Competition during the Muharram Festival, celebrating the
+                anniversary of the Faculty of Mathematics and Natural Sciences
+                at Lambung Mangkurat University.
+              </li>
+            </ul>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer
+      class="text-center py-1 bg-gradient-to-r from-secondary to-primary text-tersier-100 md:text-tersier"
+    >
+      <p>
+        Copyright &copy; 2024 - Code and Design <span>by Muhammad Randy</span>
+      </p>
+    </footer>
+
+    <!-- Typed.js -->
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+    <!-- Tailwind -->
+    <script src="tailwind-config.js"></script>
+
+    <!-- my JS -->
+    <script src="script.js"></script>
+  </body>
+</html>
